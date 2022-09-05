@@ -49,7 +49,6 @@
   background-color: #fdf0e4;
 }
 .proceduresSection {
-  background-color: #fdf0e4;
 
 
 }
@@ -143,6 +142,15 @@ a{
   transform: translateY(-10px);
   transition: all ease 0.3s;
 }
+
+.docName{
+  font-style: italic; font-family: "Comfortaa";
+}
+.doctorsPage{ color: #4c3a2f;;
+  background-color:#fdf0e4;
+}
+
+
 
 @media(max-width:1060px){
   .testimonial-box{

@@ -8,13 +8,13 @@ function NavBar() {
   return (
     <div>
       <div className="navigation">
-        <Navbar expand="sm">
-          <Container fluid>
+        <Navbar expand="lg">
+          <Container>
             <Navbar.Brand href="/">
               <img
                 src="/images/mirror-logo.png"
-                width="30%"
-                height="30%"
+                width="20%"
+                height="20%"
                 alt="MIRRORLogo"
               />
             </Navbar.Brand>
@@ -25,23 +25,24 @@ function NavBar() {
                 <Nav.Link href="/">О НАС</Nav.Link>
                 <Nav.Link href="/catalog">ПРОЦЕДУРЫ</Nav.Link>
                 <NavDropdown title="НАШИ СПЕЦИАЛИСТЫ" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="/doctors/0">
+                  Гулиева Севиль Теймуровна
+                  </NavDropdown.Item>
                   <NavDropdown.Item href="/doctors/1">
-                    Sevil 1
+                  Кан Вероника Вадимовна
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/doctors/2">
-                  Sevil 2
+                  Дадаш-заде Лейла Фикрат кызы
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/doctors/3">
-                  Sevil 3
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/doctors/4">
-                  Sevil 4
+                  Скуридина Дарья Викторовна
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="/">ОБЗОРЫ</Nav.Link>
                 <Nav.Link href="/catalog">РЕЗУЛЬТАТЫ</Nav.Link>
+                <Nav.Link href="/catalog">ОТЗЫВЫ</Nav.Link>
+                 <Nav.Link href="/catalog">ПРАЙСЛИСТ</Nav.Link>
                 <Nav.Link href="/">КОНТАКТЫ </Nav.Link>
-                <Nav.Link href="/catalog">ПРАЙСЛИСТ</Nav.Link>
+               
               </Nav>
             </Navbar.Collapse>
           </Container>
