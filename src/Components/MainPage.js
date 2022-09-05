@@ -4,9 +4,10 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { doctorsData } from "./Doctors";
 import Card from "react-bootstrap/Card";
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+import reviews from "../ReviewsData";
+const resultAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 function MainPage() {
   return (
@@ -59,7 +60,6 @@ function MainPage() {
             </Col>
           </Row>
           <Row style={{ alignItems: "center" }}>
-            
             <Col sm={6}>
               <p className="description">
                 На протяжении всего курса, Вам заземлиться, услышать и начать
@@ -124,11 +124,10 @@ function MainPage() {
       <Container fluid className="aksiya">
         <h1 className="header">АКЦИЯ</h1>
         <img
-              style={{width:"100%"}}
-              alt="До-После"
-              src="/images/aksiya1.png"
-            
-            />
+          style={{ width: "100%" }}
+          alt="До-После"
+          src="/images/aksiya1.png"
+        />
       </Container>
       <Container>
         <h1 className="header">НАШИ СПЕЦИАЛИСТЫ</h1>
@@ -154,186 +153,164 @@ function MainPage() {
       </Container>
       <Container className="resaults" style={{ alignItems: "center" }}>
         <h1 className="header">РЕЗУЛЬТАТЫ ПРОЦЕДУР</h1>
-    <Carousel>
-      <Carousel.Item >
-      <img src="/images/resoult1.png"  width="100%"
-                height="auto"
-                alt="images" />
-        
-      
-      </Carousel.Item>
-      <Carousel.Item >
-      <img src="/images/resoult2.png"  width="100%"
-                height="auto" alt="images" />
-        
-      </Carousel.Item>
-      <Carousel.Item >
-      <img src="/images/8.png"   width="100%"
-                height="auto" alt="images"/>
-       
-      </Carousel.Item>
-      <Carousel.Item >
-      <img src="/images/resoult3.png"   width="100%"
-                height="auto" alt="images"/>
-       
-      </Carousel.Item>
-      <Carousel.Item >
-      <img src="/images/resoult4.png"   width="100%"
-                height="auto" alt="images"/>
-       
-      </Carousel.Item>
-      <Carousel.Item >
-      <img src="/images/5.png"   width="100%"
-                height="auto" alt="images"/>
-       
-      </Carousel.Item>
-      <Carousel.Item >
-      <img src="/images/6.png"   width="100%"
-                height="auto" alt="images"/>
-       
-      </Carousel.Item>
-      <Carousel.Item >
-      <img src="/images/7.png"   width="100%"
-                height="auto" alt="images"/>
-       
-      </Carousel.Item>
-
-    </Carousel>
-         
+        <Carousel style={{ width: "50%", margin: "auto", minWidth: "300px" }}>
+            {resultAmount.map((num) => {
+              return (
+                  <Carousel.Item style={{diplay: "flex"}}>
+                    <img
+                      src={`/images/result${num}.png`}
+                      width="100%"
+                      height="auto"
+                      alt="images"
+                    />
+                  </Carousel.Item>
+              );
+            })}
+        </Carousel>
       </Container>
       <Container>
         <h1 className="header">ОТЗЫВЫ</h1>
-      
-        <section id="testimonials">
-      
-        
-        <div class="testimonial-box-container">
-         
-            <div class="testimonial-box">
-              
-                <div class="box-top">
-                    
-                    <div class="profile">
-                       
-                        <div class="profile-img">
-                        <img src="/images/4.png" alt="images" />
-                        </div>
-                        
-                        <div class="name-user">
-                            <strong>Дарья С.</strong>
-                      
-                        </div>
-                    </div>
-                   
-                    <div class="reviews">
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                        <i class="fa">&#xf005;</i>
-                    </div>
-                </div>
-                
-                <div class="client-comment">
-                    <p>В невероятном восторге от центра косметологии "Mirror Mirror"! Делала там чистку лица и микротоки. Сказать, что осталась довольна, ничего не сказать. Уютная доброжелательная атмосфера, профессиональный и позитивный коллектив специалистов. Подробно рассказали мне о всех процедурах, понятно и доступно ответили на множество моих вопросов. Я выбрала микротоки для лица. И результат превзошел все мои ожидания! Эффект омоложения был заметен даже друзьям и коллегам. Я осталась очень довольна. Планирую попробовать и другие процедуры. Рекомендую.</p>
-                </div>
-            </div>
-           
-            <div class="testimonial-box">
-               
-                <div class="box-top">
-                    
-                    <div class="profile">
-                        
-                        <div class="profile-img">
-                        <img src="/images/3.png" alt="images" />
-                        </div>
-                        
-                        <div class="name-user">
-                            <strong>Ряднова Новожилова</strong>
-                          
-                        </div>
-                    </div>
-                    
-                    <div class="reviews">
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                        <i class="fa">&#xf005;</i>
-                    </div>
-                </div>
-                
-                <div class="client-comment">
-                    <p>Очень душевная, дружеская и по настоящему уютная обстановка, располагающая к расслаблению, общению и медитации. Сюда точно хочется вернуться, т. к. здесь 100% помогут решить проблемы с фигурой, улучшить и привести к идеалу лицо. Здесь работают профессионалы своего дела! Всем советую от души. Точно не разочаруетесь.</p>
-                </div>
-            </div>
-         
-            <div class="testimonial-box">
-               
-                <div class="box-top">
-                 
-                    <div class="profile">
-                       
-                        <div class="profile-img">
-                        <img src="/images/2.png" alt="images" />
-                        </div>
-                       
-                        <div class="name-user">
-                            <strong>Tamilla Rzayeva</strong>
-                      
-                        </div>
-                    </div>
-                    
-                    <div class="reviews">
-                      <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                        <i class="fa">&#xf005;</i>
-                    </div>
-                </div>
-   
-                <div class="client-comment">
-                    <p>Хорошая клиника, с очень доброжелательным персоналом, уютная и приятная обстановка. Делала процедуру Smas лифтинг, все понравилось, эффект был заметен уже после 1 сеанса. Специалисты всё подробно рассказали и показали, ответили на все мои вопросы. Спасибо большое, однозначно рекомендую!</p>
-                </div>
-            </div>
-           
-            <div class="testimonial-box">
-               
-                <div class="box-top">
-                   
-                    <div class="profile">
-                       
-                        <div class="profile-img">
-                            <img src="/images/1.png" alt="images" />
-                        </div>
-                      
-                        <div class="name-user">
-                            <strong>Нина Т.</strong>
-                          
-                        </div>
-                    </div>
-                   
-                    <div class="reviews">
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                    <i class="fa">&#xf005;</i>
-                        <i class="fa">&#xf005;</i>
-                    </div>
-                </div>
-                
-                <div class="client-comment">
-                    <p>Долго не могла найти студию красоты, где будут оказывать разнообразные услуги аппаратной косметологии в одном месте.По рекомендации обратилась с целью привести себя к лету в форму, тк на тренировки особенно времени нету. Хочу выразить благодарность доктору Кан Веронике, ходила к ней на lpg-процедуры , в ее заботливых руках я просто отдыхала, все сделано настолько аккуратно, но самое главное качественно. За 2 недели ушли 6 см в объемах, кожа заметно подтянулась и стала более гладкой.такого чудесного результата я не ожидала!!!! Атмосфера в данном салоне потрясающая, как будто приходишь к подруге, все по- домашнему и непренужденно.Всем рекомендую обратиться. Всем сотрудникам выражаю огромную благодарность за труд!!!</p>
-                </div>
-            </div>
-        </div>
-      </section>
-      <Container className="footer">
-      
 
-      </Container>
+        <section id="testimonials">
+          <div class="testimonial-box-container">
+            <div class="testimonial-box">
+              <div class="box-top">
+                <div class="profile">
+                  <div class="profile-img">
+                    <img src="/images/4.png" alt="images" />
+                  </div>
+
+                  <div class="name-user">
+                    <strong>Дарья С.</strong>
+                  </div>
+                </div>
+
+                <div class="reviews">
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                </div>
+              </div>
+
+              <div class="client-comment">
+                <p>
+                  В невероятном восторге от центра косметологии "Mirror Mirror"!
+                  Делала там чистку лица и микротоки. Сказать, что осталась
+                  довольна, ничего не сказать. Уютная доброжелательная
+                  атмосфера, профессиональный и позитивный коллектив
+                  специалистов. Подробно рассказали мне о всех процедурах,
+                  понятно и доступно ответили на множество моих вопросов. Я
+                  выбрала микротоки для лица. И результат превзошел все мои
+                  ожидания! Эффект омоложения был заметен даже друзьям и
+                  коллегам. Я осталась очень довольна. Планирую попробовать и
+                  другие процедуры. Рекомендую.
+                </p>
+              </div>
+            </div>
+
+            <div class="testimonial-box">
+              <div class="box-top">
+                <div class="profile">
+                  <div class="profile-img">
+                    <img src="/images/3.png" alt="images" />
+                  </div>
+
+                  <div class="name-user">
+                    <strong>Ряднова Новожилова</strong>
+                  </div>
+                </div>
+
+                <div class="reviews">
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                </div>
+              </div>
+
+              <div class="client-comment">
+                <p>
+                  Очень душевная, дружеская и по настоящему уютная обстановка,
+                  располагающая к расслаблению, общению и медитации. Сюда точно
+                  хочется вернуться, т. к. здесь 100% помогут решить проблемы с
+                  фигурой, улучшить и привести к идеалу лицо. Здесь работают
+                  профессионалы своего дела! Всем советую от души. Точно не
+                  разочаруетесь.
+                </p>
+              </div>
+            </div>
+
+            <div class="testimonial-box">
+              <div class="box-top">
+                <div class="profile">
+                  <div class="profile-img">
+                    <img src="/images/2.png" alt="images" />
+                  </div>
+
+                  <div class="name-user">
+                    <strong>Tamilla Rzayeva</strong>
+                  </div>
+                </div>
+
+                <div class="reviews">
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                </div>
+              </div>
+
+              <div class="client-comment">
+                <p>{reviews[17].text}</p>
+              </div>
+            </div>
+
+            <div class="testimonial-box">
+              <div class="box-top">
+                <div class="profile">
+                  <div class="profile-img">
+                    <img src="/images/1.png" alt="images" />
+                  </div>
+
+                  <div class="name-user">
+                    <strong>Нина Т.</strong>
+                  </div>
+                </div>
+
+                <div class="reviews">
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                  <i class="fa">&#xf005;</i>
+                </div>
+              </div>
+
+              <div class="client-comment">
+                <p>
+                  Долго не могла найти студию красоты, где будут оказывать
+                  разнообразные услуги аппаратной косметологии в одном месте.По
+                  рекомендации обратилась с целью привести себя к лету в форму,
+                  тк на тренировки особенно времени нету. Хочу выразить
+                  благодарность доктору Кан Веронике, ходила к ней на
+                  lpg-процедуры , в ее заботливых руках я просто отдыхала, все
+                  сделано настолько аккуратно, но самое главное качественно. За
+                  2 недели ушли 6 см в объемах, кожа заметно подтянулась и стала
+                  более гладкой.такого чудесного результата я не ожидала!!!!
+                  Атмосфера в данном салоне потрясающая, как будто приходишь к
+                  подруге, все по- домашнему и непренужденно.Всем рекомендую
+                  обратиться. Всем сотрудникам выражаю огромную благодарность за
+                  труд!!!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <Container className="footer"></Container>
       </Container>
     </div>
   );
