@@ -23,19 +23,18 @@ function NavBar() {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
                 <Nav.Link href="/">ГЛАВНАЯ</Nav.Link>
-                <Nav.Link href="/">О НАС</Nav.Link>
                 <Nav.Link href="/catalog">ПРОЦЕДУРЫ</Nav.Link>
                 <NavDropdown title="НАШИ СПЕЦИАЛИСТЫ" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="/doctors/0">
+                  <NavDropdown.Item href="/doctors/1">
                   Гулиева Севиль Теймуровна
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/doctors/1">
+                  <NavDropdown.Item href="/doctors/2">
                   Кан Вероника Вадимовна
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/doctors/2">
+                  <NavDropdown.Item href="/doctors/3">
                   Дадаш-заде Лейла Фикрат кызы
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/doctors/3">
+                  <NavDropdown.Item href="/doctors/4">
                   Скуридина Дарья Викторовна
                   </NavDropdown.Item>
                 </NavDropdown>

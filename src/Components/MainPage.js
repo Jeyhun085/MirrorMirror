@@ -7,7 +7,7 @@ import Card from "react-bootstrap/Card";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import reviews from "../ReviewsData";
-const resultAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const resultAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
 function MainPage() {
   return (
@@ -153,7 +153,7 @@ function MainPage() {
       </Container>
       <Container className="resaults" style={{ alignItems: "center" }}>
         <h1 className="header">РЕЗУЛЬТАТЫ ПРОЦЕДУР</h1>
-        <Carousel style={{ width: "50%", margin: "auto", minWidth: "300px" }}>
+        <Carousel style={{ width: "50%", margin: "auto", minWidth: "320px" }}>
             {resultAmount.map((num) => {
               return (
                   <Carousel.Item style={{diplay: "flex"}}>
@@ -176,8 +176,8 @@ function MainPage() {
             <div class="testimonial-box">
               <div class="box-top">
                 <div class="profile">
-                  <div class="profile-img">
-                    <img src="/images/4.png" alt="images" />
+                  <div class="profile-img" style={{borderRadius:"50px"}}>
+                    <img src="/images/avatarka3.png" alt="images"/>
                   </div>
 
                   <div class="name-user">

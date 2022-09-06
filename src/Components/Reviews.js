@@ -19,7 +19,7 @@ function Reviews() {
             <div class="profile">
 
               <div class="profile-img">
-                <img src="/images/3.png" alt="images" />
+                <img src="/images/avatarka3.png" alt="images" />
               </div>
 
               <div class="name-user">
