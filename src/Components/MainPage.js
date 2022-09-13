@@ -22,9 +22,9 @@ function MainPage() {
         <h1 className="header"> О НАС</h1>
         <Container>
           <Row style={{ alignItems: "center" }}>
-            <Col sm={6}>
+            <Col style={{display: "flex", justifyContent: "center"}} sm={6}>
               <img
-                src="/images/image2.jpg"
+                src="/images/team.jpg"
                 width="80%"
                 height="auto"
                 alt="images"
@@ -47,10 +47,11 @@ function MainPage() {
                 Mirror Mirror – эта та самая сказка, которая становиться явью.
                 Наше зеркало покажет Вам ПРАВДУ о вашем теле и лице! Ведь Вы
                 итак уже красивы, а мы является лишь проводниками в раскрытии
-                вашей истинной красоты.
+                вашей истинной красоты.    На протяжении всего курса, Вам заземлиться, услышать и начать
+                любить себя❤️.
               </p>
             </Col>
-            <Col sm={6}>
+            <Col style={{display: "flex", justifyContent: "center"}} sm={6}>
               <img
                 src="/images/image4.jpg"
                 width="80%"
@@ -59,64 +60,52 @@ function MainPage() {
               />
             </Col>
           </Row>
-          <Row style={{ alignItems: "center" }}>
-            <Col sm={6}>
-              <p className="description">
-                На протяжении всего курса, Вам заземлиться, услышать и начать
-                любить себя❤️.
-              </p>
-            </Col>
-          </Row>
         </Container>
       </Container>
-      <Container fluid className="proceduresSection">
+      <Container fluid id="treatments" className="proceduresSection">
         <h1 className="header">ПРОЦЕДУРЫ</h1>
         <Container>
           <Row style={{ gap: "10px" }} sm={"auto"}>
-            <Button className="treatmentButtons" variant="outline-secondary">
-              SMAS-лифтинг
+            <Button  href="/treatments/1"  className="treatmentButtons" variant="outline-secondary">
+              SMAS-лифтинг тела
             </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+            <Button  href="/treatments/2"  className="treatmentButtons" variant="outline-secondary">
               RF-лифтинг тела
             </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
-              Ультразвуковой лифтинг{" "}
-            </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+           
+            <Button  href="/treatments/3" className="treatmentButtons" variant="outline-secondary">
               Лазерная эпиляция
             </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+            <Button  href="/treatments/4"  className="treatmentButtons" variant="outline-secondary">
               Микротоковая терапия
             </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+            <Button  href="/treatments/5"  className="treatmentButtons" variant="outline-secondary">
               Кавитация
             </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+            <Button  href="/treatments/6"  className="treatmentButtons" variant="outline-secondary">
               RF-лифтинг лица
             </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+            <Button  href="/treatments/7"  className="treatmentButtons" variant="outline-secondary">
               Лазерный липолиз
-            </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
-              Вакуумный RF-лифтинг массаж
-            </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+            </Button>       
+            <Button  href="/treatments/8"  className="treatmentButtons" variant="outline-secondary">
               Карбоновый пиллинг
             </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
-              Прессотерапия
-            </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+        
+            <Button  href="/treatments/9"  className="treatmentButtons" variant="outline-secondary">
               Прессотерапия с ИК-прогревом
             </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+            <Button  href="/treatments/10"  className="treatmentButtons" variant="outline-secondary">
               Миостимуляция (фитнес для ленивых)
             </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+            <Button  href="/treatments/12"  className="treatmentButtons" variant="outline-secondary">
               Ультрафонофорез
             </Button>
-            <Button className="treatmentButtons" variant="outline-secondary">
+            <Button  href="/treatments/11"  className="treatmentButtons" variant="outline-secondary">
               VELASHAPE 4D массаж
+            </Button>
+            <Button  href="/treatments/13"  className="treatmentButtons" variant="outline-secondary">
+            SMAS-лифтинг лица
             </Button>
           </Row>
         </Container>
@@ -125,16 +114,16 @@ function MainPage() {
         <h1 className="header">АКЦИЯ</h1>
         <img
           style={{ width: "100%" }}
-          alt="До-После"
-          src="/images/aksiya1.png"
+          alt="akciya"
+          src="/images/akciya.jpeg"
         />
       </Container>
       <Container>
         <h1 className="header">НАШИ СПЕЦИАЛИСТЫ</h1>
         <Row style={{ gap: "20px", justifyContent: "center" }}>
-          {doctorsData.map((doctor) => {
+          {doctorsData.map((doctor, index) => {
             return (
-              <Card style={{ width: "18rem" }}>
+              <Card key={index} style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={doctor.img} />
                 <Card.Body>
                   <Card.Title>{doctor.name}</Card.Title>
@@ -142,6 +131,7 @@ function MainPage() {
                   <Button
                     style={{ float: "right" }}
                     variant="outline-secondary"
+                    href={`/doctors/${index+1}`}
                   >
                     Подробнее
                   </Button>
@@ -151,12 +141,12 @@ function MainPage() {
           })}
         </Row>
       </Container>
-      <Container className="resaults" style={{ alignItems: "center" }}>
+      <Container id="results" className="resaults" style={{ alignItems: "center" }}>
         <h1 className="header">РЕЗУЛЬТАТЫ ПРОЦЕДУР</h1>
-        <Carousel style={{ width: "50%", margin: "auto", minWidth: "320px" }}>
-            {resultAmount.map((num) => {
+        <Carousel style={{ width: "50%", margin: "auto", minWidth: "300px" }}>
+            {resultAmount.map((num, index) => {
               return (
-                  <Carousel.Item style={{diplay: "flex"}}>
+                  <Carousel.Item key={index} style={{diplay: "flex"}}>
                     <img
                       src={`/images/result${num}.png`}
                       width="100%"
@@ -168,33 +158,33 @@ function MainPage() {
             })}
         </Carousel>
       </Container>
-      <Container>
+      <Container fluid>
         <h1 className="header">ОТЗЫВЫ</h1>
 
         <section id="testimonials">
-          <div class="testimonial-box-container">
-            <div class="testimonial-box">
-              <div class="box-top">
-                <div class="profile">
-                  <div class="profile-img" style={{borderRadius:"50px"}}>
+          <div className="testimonial-box-container">
+            <div className="testimonial-box">
+              <div className="box-top">
+                <div className="profile">
+                  <div className="profile-img" style={{borderRadius:"50px"}}>
                     <img src="/images/avatarka3.png" alt="images"/>
                   </div>
 
-                  <div class="name-user">
+                  <div className="name-user">
                     <strong>Дарья С.</strong>
                   </div>
                 </div>
 
-                <div class="reviews">
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
+                <div className="reviews">
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
                 </div>
               </div>
 
-              <div class="client-comment">
+              <div className="client-comment">
                 <p>
                   В невероятном восторге от центра косметологии "Mirror Mirror"!
                   Делала там чистку лица и микротоки. Сказать, что осталась
@@ -210,28 +200,28 @@ function MainPage() {
               </div>
             </div>
 
-            <div class="testimonial-box">
-              <div class="box-top">
-                <div class="profile">
-                  <div class="profile-img">
-                    <img src="/images/3.png" alt="images" />
+            <div className="testimonial-box">
+              <div className="box-top">
+                <div className="profile">
+                  <div className="profile-img">
+                    <img src="/images/avatarka3.png" alt="images" />
                   </div>
 
-                  <div class="name-user">
+                  <div className="name-user">
                     <strong>Ряднова Новожилова</strong>
                   </div>
                 </div>
 
-                <div class="reviews">
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
+                <div className="reviews">
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
                 </div>
               </div>
 
-              <div class="client-comment">
+              <div className="client-comment">
                 <p>
                   Очень душевная, дружеская и по настоящему уютная обстановка,
                   располагающая к расслаблению, общению и медитации. Сюда точно
@@ -243,54 +233,54 @@ function MainPage() {
               </div>
             </div>
 
-            <div class="testimonial-box">
-              <div class="box-top">
-                <div class="profile">
-                  <div class="profile-img">
-                    <img src="/images/2.png" alt="images" />
+            <div className="testimonial-box">
+              <div className="box-top">
+                <div className="profile">
+                  <div className="profile-img">
+                    <img src="/images/avatarka3.png" alt="images" />
                   </div>
 
-                  <div class="name-user">
+                  <div className="name-user">
                     <strong>Tamilla Rzayeva</strong>
                   </div>
                 </div>
 
-                <div class="reviews">
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
+                <div className="reviews">
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
                 </div>
               </div>
 
-              <div class="client-comment">
+              <div className="client-comment">
                 <p>{reviews[17].text}</p>
               </div>
             </div>
 
-            <div class="testimonial-box">
-              <div class="box-top">
-                <div class="profile">
-                  <div class="profile-img">
-                    <img src="/images/1.png" alt="images" />
+            <div className="testimonial-box">
+              <div className="box-top">
+                <div className="profile">
+                  <div className="profile-img">
+                    <img src="/images/avatarka3.png" alt="images" />
                   </div>
 
-                  <div class="name-user">
+                  <div className="name-user">
                     <strong>Нина Т.</strong>
                   </div>
                 </div>
 
-                <div class="reviews">
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
-                  <i class="fa">&#xf005;</i>
+                <div className="reviews">
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
+                  <i className="fa">&#xf005;</i>
                 </div>
               </div>
 
-              <div class="client-comment">
+              <div className="client-comment">
                 <p>
                   Долго не могла найти студию красоты, где будут оказывать
                   разнообразные услуги аппаратной косметологии в одном месте.По
@@ -309,8 +299,9 @@ function MainPage() {
               </div>
             </div>
           </div>
+          <Button style={{marginTop:"2%"}} href="/reviews" variant="outline-secondary">Посмотреть все отзывы</Button>
         </section>
-        <Container className="footer"></Container>
+        
       </Container>
     </div>
   );
